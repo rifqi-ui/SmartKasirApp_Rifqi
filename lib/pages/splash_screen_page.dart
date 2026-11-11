@@ -1,5 +1,7 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+
 import 'main_navigation_page.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -10,7 +12,6 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
-  // Tantangan 2: durasi diubah dari 5 menjadi 10 detik
   int _durasiDetik = 10;
   Timer? _timer;
 
@@ -29,7 +30,6 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       } else {
         _timer?.cancel();
         if (!mounted) return;
-        // pushReplacement: pengguna tidak bisa kembali ke splash
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const MainNavigationPage()),
@@ -46,31 +46,29 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
   @override
   Widget build(BuildContext context) {
-    final primary = Theme.of(context).colorScheme.primary;
-
     return Scaffold(
-      backgroundColor: primary,
+      backgroundColor: const Color(0xFF1E3A8A),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.2),
+                    color: Color(0x33000000),
                     blurRadius: 15,
-                    offset: const Offset(0, 5),
+                    offset: Offset(0, 5),
                   ),
                 ],
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.point_of_sale_rounded,
                 size: 72,
-                color: primary,
+                color: Color(0xFF1E3A8A),
               ),
             ),
             const SizedBox(height: 24),
@@ -103,9 +101,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               style: const TextStyle(fontSize: 12, color: Colors.white70),
             ),
             const SizedBox(height: 40),
-            const Text(
+            Text(
               'Versi 1.0.0 — Modul Pertemuan 10',
-              style: TextStyle(fontSize: 11, color: Colors.white54),
+              style: TextStyle(fontSize: 11, color: Colors.blue.shade200),
             ),
           ],
         ),

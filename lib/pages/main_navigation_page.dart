@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'dashboard_page.dart';
 
 class MainNavigationPage extends StatefulWidget {
@@ -14,29 +15,36 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   final List<Widget> _pages = [
     const DashboardPage(),
     const Center(
-        child: Text('Menu 2: Transaksi Kasir POS (Modul M14)',
-            style: TextStyle(fontSize: 16))),
+      child: Text(
+        'Menu 2: Transaksi Kasir POS (Modul M14)',
+        style: TextStyle(fontSize: 16),
+      ),
+    ),
     const Center(
-        child: Text('Menu 3: Riwayat Penjualan & Laporan (Modul M12)',
-            style: TextStyle(fontSize: 16))),
+      child: Text(
+        'Menu 3: Riwayat Penjualan & Laporan (Modul M12)',
+        style: TextStyle(fontSize: 16),
+      ),
+    ),
     const Center(
-        child: Text('Menu 4: Profil Toko & Pengaturan (Modul M12)',
-            style: TextStyle(fontSize: 16))),
+      child: Text(
+        'Menu 4: Profil Toko & Pengaturan (Modul M12)',
+        style: TextStyle(fontSize: 16),
+      ),
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final primary = Theme.of(context).colorScheme.primary;
-
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.08),
+              color: Color(0x14000000),
               blurRadius: 10,
-              offset: const Offset(0, -2),
+              offset: Offset(0, -2),
             ),
           ],
         ),
@@ -49,10 +57,12 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
           },
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.white,
-          selectedItemColor: primary,
+          selectedItemColor: const Color(0xFF1E3A8A),
           unselectedItemColor: Colors.grey.shade500,
-          selectedLabelStyle:
-              const TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
+          selectedLabelStyle: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 11,
+          ),
           unselectedLabelStyle: const TextStyle(fontSize: 10),
           items: const [
             BottomNavigationBarItem(

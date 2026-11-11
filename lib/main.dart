@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'pages/splash_screen_page.dart';
 
 void main() {
@@ -10,24 +11,20 @@ class SmartKasirApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Tantangan 1: seedColor diganti dari biru navy ke teal.
-    // Ubah warna di sini untuk mengganti tema seluruh aplikasi.
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: Colors.teal,
-      brightness: Brightness.light,
-    );
-
     return MaterialApp(
       title: 'SmartKasir',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: colorScheme,
-        appBarTheme: AppBarTheme(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
+          brightness: Brightness.light,
+        ),
+        appBarTheme: const AppBarTheme(
           centerTitle: true,
           elevation: 2,
-          backgroundColor: colorScheme.primary,
-          foregroundColor: colorScheme.onPrimary,
+          backgroundColor: Colors.teal,
+          foregroundColor: Colors.white,
         ),
       ),
       home: const SplashScreenPage(),
